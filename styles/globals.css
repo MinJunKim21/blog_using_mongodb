@@ -1,7 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-html {
-  font-family: josefin;
-} */
+
+@layer components {
+  .topIcon {
+    @apply text-[#444] cursor-pointer;
+  }
+  .topListItem {
+    @apply cursor-pointer font-[josefin];
+  }
+}

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Banner from '../components/Banner';
 import TopBar from '../components/TopBar';
 
 export default function Home() {
@@ -10,30 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <TopBar />
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-      <p className="font-[lora] text-3xl">test</p>
-
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
-      <p>test</p>
+      <Banner />
     </div>
   );
 }
