@@ -1,5 +1,8 @@
 import Head from 'next/head';
 import Banner from '../components/Banner';
+import Main from '../components/Main';
+import Posts from '../components/Posts';
+import Sidebar from '../components/Sidebar';
 import TopBar from '../components/TopBar';
 
 export default function Home() {
@@ -12,6 +15,7 @@ export default function Home() {
       </Head>
       <TopBar />
       <Banner />
+      <Main />
     </div>
   );
 }
