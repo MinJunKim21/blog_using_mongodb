@@ -9,9 +9,9 @@ import {
 
 function Sidebar() {
   return (
-    <div className="bg-[#f4f2f2] m-5 pb-7.5 flex flex-col items-center max-w0 ">
+    <div className="bg-[#f4f2f2] mt-5 mr-5 pb-7.5 flex flex-col items-center  ">
       <div className="flex flex-col items-center whitespace-no-wrap mt-2 p-5">
-        <span className="m-3 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 text-center text-md">
+        <span className="m-3 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 font-poppins text-center text-md">
           ABOUT ME
         </span>
         <div className="relative w-full h-[300px]  mt-3">
@@ -22,16 +22,16 @@ function Sidebar() {
             alt=""
           />
         </div>
-        <p className="font-light text-sm pt-2">
+        <p className="font-light text-sm pt-2 font-poppins">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
           laboriosam dolore debitis maxime officiis. Nulla accusamus provident,
           quas corporis doloribus maiores
         </p>
 
-        <span className="mt-8 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 text-center text-md">
+        <span className="mt-8 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 font-poppins text-center text-md">
           CATEGORIES
         </span>
-        <ul className="flex flex-wrap py-5 font-light text-sm pl-4">
+        <ul className="flex flex-wrap py-5 font-poppins font-light text-sm pl-4">
           <li className="w-[50%]">Life</li>
           <li className=" w-[50%]">Career</li>
           <li className=" w-[50%]">Education</li>
@@ -40,7 +40,7 @@ function Sidebar() {
           <li className=" w-[50%]">Skill</li>
         </ul>
 
-        <span className="m-3 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 text-center text-md">
+        <span className="m-3 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 text-center text-md font-poppins">
           FOLLOW ME
         </span>
         <div className="flex space-x-3 text-xl">

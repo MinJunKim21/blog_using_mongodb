@@ -9,7 +9,7 @@ import {
 
 function TopBar() {
   return (
-    <div className="w-full h-12  font-[josefin] top-0 flex items-center justify-between max-w-7xl sticky mx-auto text-xl z-50 bg-white">
+    <div className="w-full h-12  font-poppins font-light top-0 flex items-center justify-between max-w-7xl sticky mx-auto text-xl z-50 bg-white">
       <div className="flex gap-2 ml-5">
         <FaFacebookSquare className="topIcon" />
         <FaTwitterSquare className="topIcon" />

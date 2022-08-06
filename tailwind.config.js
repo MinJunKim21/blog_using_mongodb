@@ -7,10 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        josefin: ['Josefin Sans', 'sans - serif'],
-        lora: ['Lora', 'serif'],
-        varela: ['Varela', 'sans-serif'],
-        varelaRound: ['Varela Round', 'sans-serif'],
+        garamond: ['Cormorant Garamond', 'serif'],
+        nanummyeongjo: ['Nanum Myeongjo', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },

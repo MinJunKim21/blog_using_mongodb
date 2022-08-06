@@ -3,8 +3,8 @@ import Image from 'next/image';
 function Banner() {
   return (
     <div className="max-w-7xl mx-auto">
-      <div className="relative font-[lora] mt-[60px] flex flex-col justify-center items-center text-[#444]">
-        <span className="absolute text-xl">React & Node</span>
+      <div className="relative font-garamond mt-[60px] flex flex-col justify-center items-center text-[#444]">
+        <span className="absolute text-2xl">React & Node</span>
         <span className="absolute top-[0px] text-[100px]">Blog</span>
       </div>
 

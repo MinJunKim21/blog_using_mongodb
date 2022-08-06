@@ -1,4 +1,4 @@
-import Post from './Post';
+import Post from './Posts';
 import Sidebar from './Sidebar';
 
 function Main() {
