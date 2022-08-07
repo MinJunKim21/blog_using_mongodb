@@ -31,7 +31,7 @@ function register() {
           </button>
           <div className="justify-center flex items-center space-x-3 mt-5">
             <span className="font-poppins text-sm mt-5 text-gray-500">
-              Don't have an account?
+              Don`t have an account?
             </span>
             <button className="font-poppins text-md mt-5 font-medium">
               Sign In
