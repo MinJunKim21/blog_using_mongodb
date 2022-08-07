@@ -35,7 +35,7 @@ function write() {
         </div>
 
         <div className="flex justify-between my-5 items-center">
-          <div className="text-lg border-2 rounded-lg py-1 px-2 border-emerald-400">
+          <div className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400">
             <label
               htmlFor="fileInput"
               className="flex space-x-2 items-center cursor-pointer"
