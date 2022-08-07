@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import { IoIosCamera } from 'react-icons/io';
 import Sidebar from '../components/Sidebar';
 
@@ -58,7 +59,7 @@ function account() {
             Update
           </button>
           <button className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400">
-            Delete Account
+            Log Out
           </button>
         </div>
       </div>
