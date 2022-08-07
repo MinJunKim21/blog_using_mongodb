@@ -27,7 +27,9 @@ function TopBar() {
           <Link href="/write">
             <li>WRITE</li>
           </Link>
-          <li>LOGOUT</li>
+          <Link href="/register">
+            <li>Register</li>
+          </Link>
         </ul>
       </div>
       <div className="flex items-center">
