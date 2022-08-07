@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function Post() {
   return (
-    <div className="mb-10 w-[385px] mx-auto mt-5">
+    <div className="mb-10 w-[385px] mx-3 mt-5">
       <div className="relative h-[280px]">
         <Image
           src="https://images.unsplash.com/photo-1537498425277-c283d32ef9db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1178&q=80"

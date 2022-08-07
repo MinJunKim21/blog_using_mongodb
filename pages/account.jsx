@@ -37,19 +37,19 @@ function account() {
           <input
             type="text"
             placeholder="Minjun Kim"
-            className=" border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins"
+            className=" border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins rounded-md"
           />
           <h2 className="text-xl font-medium font-poppins">Email</h2>
           <input
             type="email"
             placeholder="Minjun@coding.com"
-            className="border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins"
+            className="border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins rounded-md"
           />
           <h2 className="text-xl font-medium font-poppins">Password</h2>
           <input
             type="password"
             placeholder="*******"
-            className="border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins"
+            className="border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins rounded-md"
           />
         </form>
 
