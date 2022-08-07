@@ -3,6 +3,7 @@ import Image from 'next/image';
 function register() {
   return (
     <div className="relative h-screen flex flex-col -mt-12">
+      <div className="bg-white w-full h-12"></div>
       <Image
         src="https://images.unsplash.com/photo-1508780709619-79562169bc64?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
         layout="fill"
