@@ -8,7 +8,10 @@ dotenv.config();
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(console.log('connected to mongodb'))
   .catch((err) => console.log(err));
 
@@ -20,7 +23,7 @@ app.use('/api/auth', authRoute);
 //이렇게 작성하면, localhost:5001/minjun 들어가면 this is minjun web 이라는 콘솔 작동함
 
 app.listen('5001', () => {
-  console.log('backenddaaadddd');
+  console.log('backenddasdfsadaaadddd');
 });
 
 // npm init 으로 package.json 을 만들고,
