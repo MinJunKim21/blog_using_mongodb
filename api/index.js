@@ -1,12 +1,22 @@
 const express = require('express');
 const app = express();
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const authRoute = require('./routes/auth');
 
-dontenv.config();
+dotenv.config();
+app.use(express.json());
 
-app.use('/minjun', (req, res) => {
-  console.log('this is minjun web');
-});
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(console.log('connected to mongodb'))
+  .catch((err) => console.log(err));
+
+app.use('/api/auth', authRoute);
+
+// app.use('/minjun', (req, res) => {
+//   console.log('this is minjun web');
+// });
 //이렇게 작성하면, localhost:5001/minjun 들어가면 this is minjun web 이라는 콘솔 작동함
 
 app.listen('5001', () => {
