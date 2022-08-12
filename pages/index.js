@@ -1,9 +1,20 @@
+import axios from 'axios';
 import Head from 'next/head';
+import { useEffect, useState } from 'react';
 import Banner from '../components/Banner';
 import Main from '../components/Main';
 import TopBar from '../components/TopBar';
 
 export default function Home() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await axios.get('/posts');
+      // console.log(res);
+    };
+    fetchPosts();
+  }, []);
   return (
     <div>
       <Head>
