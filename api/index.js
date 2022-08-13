@@ -10,6 +10,7 @@ const multer = require('multer');
 const cors = require('cors');
 
 app.use(cors());
+//이거를 해서 fetch나 axios 안되던 cors 문제가 해결됨
 
 dotenv.config();
 app.use(express.json());
