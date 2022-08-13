@@ -1,15 +1,13 @@
-import Post from './Posts';
+import Post from './Post';
 import Sidebar from './Sidebar';
 
-function Main() {
+function Main({ posts }) {
   return (
     <div className="flex max-w-7xl mx-auto">
       <div className="basis-3/4 flex flex-wrap">
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        {posts.map((p) => (
+          <Post key={p._id} post={p} />
+        ))}
       </div>
       <div className="basis-1/4">
         <Sidebar />

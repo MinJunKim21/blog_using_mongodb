@@ -11,10 +11,10 @@ export default function Home() {
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await axios.get('http://localhost:5001/api/posts');
-      console.log(res);
+      // console.log(res);
+      setPosts(res.data);
     };
     fetchPosts();
-    console.log('fuck');
   }, []);
   return (
     <div>
@@ -24,7 +24,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
-      <Main />
+      <Main posts={posts} />
     </div>
   );
 }
