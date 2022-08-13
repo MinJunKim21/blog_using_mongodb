@@ -1,5 +1,5 @@
-import Sidebar from '../components/Sidebar';
-import SinglePost from '../components/SinglePost';
+import Sidebar from '../../components/Sidebar';
+import SinglePost from '../../components/SinglePost';
 
 function post() {
   return (

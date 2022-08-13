@@ -1,8 +1,23 @@
 import Image from 'next/image';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { FaRegEdit } from 'react-icons/fa';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function SinglePost() {
+  const router = useRouter();
+  const path = router.asPath.split('/')[2];
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    const getPost = async () => {
+      const res = await axios.get('/posts/' + path);
+      console.log(res);
+    };
+    getPost();
+  }, [path]);
+
   return (
     <div className="flex flex-col m-5 ">
       <div className="relative h-[300px]">

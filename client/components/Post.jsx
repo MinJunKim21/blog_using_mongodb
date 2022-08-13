@@ -22,10 +22,10 @@ function Post({ post }) {
             <span key={c._id}>{c.name}</span>
           ))}
         </div>
-        {/* <Link href={`/post/${post._id}`}> */}
-        <Link href="/post" as={`/post/${post._id}`}>
+        <Link href={`/post/${post._id}`}>
           <span className="font-josefin text-lg font-bold">{post.title}</span>
         </Link>
+
         <hr />
         <span className=" text-sm text-gray-400 font-lora mt-4 ">
           {new Date(post.createdAt).toDateString()}
