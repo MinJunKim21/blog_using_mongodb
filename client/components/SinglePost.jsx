@@ -12,8 +12,9 @@ function SinglePost() {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get('/posts/' + path);
+      const res = await axios.get(`http://localhost:5001/api/posts/${path}`);
       console.log(res);
+      setPost(res.data);
     };
     getPost();
   }, [path]);
