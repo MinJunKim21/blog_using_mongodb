@@ -10,10 +10,11 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get('/posts');
-      // console.log(res);
+      const res = await axios.get('http://localhost:5001/api/posts');
+      console.log(res);
     };
     fetchPosts();
+    console.log('fuck');
   }, []);
   return (
     <div>
