@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import {
   FaFacebookSquare,
   FaTwitterSquare,
@@ -6,8 +7,20 @@ import {
   FaInstagramSquare,
   FaSearch,
 } from 'react-icons/fa';
+import axios from 'axios';
+import Link from 'next/link';
 
 function Sidebar() {
+  const [cats, setCats] = useState([]);
+
+  useEffect(() => {
+    const getCats = async () => {
+      const res = await axios.get('http://localhost:5001/api/categories');
+      setCats(res.data);
+    };
+    getCats();
+  }, []);
+
   return (
     <div className="bg-[#f4f2f2] mt-5 mr-5 pb-7.5 flex flex-col items-center  ">
       <div className="flex flex-col items-center whitespace-no-wrap mt-2 p-5">
@@ -32,12 +45,19 @@ function Sidebar() {
           CATEGORIES
         </span>
         <ul className="flex flex-wrap py-5 font-poppins font-light text-sm pl-4">
-          <li className="w-[50%]">Life</li>
-          <li className=" w-[50%]">Career</li>
+          {cats.map((c) => (
+            <Link href={`/?cat=${c.name}`}>
+              <li key={c.name} className="cursor-pointer w-[50%]">
+                {c.name}
+              </li>
+            </Link>
+          ))}
+
+          {/* <li className=" w-[50%]">Career</li>
           <li className=" w-[50%]">Education</li>
           <li className="w-[50%]">Vision</li>
           <li className="w-[50%]">Project</li>
-          <li className=" w-[50%]">Skill</li>
+          <li className=" w-[50%]">Skill</li> */}
         </ul>
 
         <span className="m-3 p-1.5 w-full border-t-[1px] border-b-[1px] border-gray-400 text-center text-md font-poppins">

@@ -23,7 +23,9 @@ function Post({ post }) {
           ))}
         </div>
         <Link href={`/post/${post._id}`}>
-          <span className="font-josefin text-lg font-bold">{post.title}</span>
+          <span className="inline cursor-pointer font-josefin text-lg font-bold">
+            {post.title}
+          </span>
         </Link>
 
         <hr />

@@ -4,6 +4,7 @@ import { FaRegEdit } from 'react-icons/fa';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 function SinglePost() {
   const router = useRouter();
@@ -13,7 +14,6 @@ function SinglePost() {
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get(`http://localhost:5001/api/posts/${path}`);
-      console.log(res);
       setPost(res.data);
     };
     getPost();
@@ -44,7 +44,10 @@ function SinglePost() {
 
       <div className="mt-7 mb-5 flex justify-between">
         <span className="font-nanummyeongjo">
-          Author: <b>{post.username}</b>
+          Author:{' '}
+          <Link href={`/?user=${post.username}`}>
+            <b className="cursor-pointer text-xl font-bold">{post.username}</b>
+          </Link>
         </span>
         <span className="font-nanummyeongjo">
           {new Date(post.createdAt).toDateString()}
