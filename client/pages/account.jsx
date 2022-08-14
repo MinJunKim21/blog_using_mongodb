@@ -22,7 +22,7 @@ function account() {
               className="rounded-full -z-10 "
             />
             <div className="z-50 cursor-pointer">
-              <label htmlFor="profilePic" className="z-50">
+              <label htmlFor="profilePic" className="z-50 cursor-pointer">
                 <IoIosCamera className="ml-[-30px] mb-[10px] text-4xl z-50 bg-gray-300 rounded-full  border-[3px]  border-white" />
               </label>
               <input type="file" id="profilePic" className="hidden" />
