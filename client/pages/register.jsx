@@ -3,7 +3,7 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useState } from 'react';
 
-function register() {
+function Register() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -91,4 +91,4 @@ function register() {
   );
 }
 
-export default register;
+export default Register;

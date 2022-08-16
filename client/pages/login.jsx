@@ -1,7 +1,30 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useContext, useRef } from 'react';
+import { Context } from '../context/Context';
+import axios from 'axios';
 
-function login() {
+function Login() {
+  const userRef = useRef();
+  const passwordRef = useRef();
+  const { user, dispatch, isFetching } = useContext(Context);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // dispatch({ type: 'LOGIN_START' });
+    // try {
+    //   const res = await axios.post('http://localhost:5001/api/auth/login', {
+    //     username: userRef.current.value,
+    //     password: passwordRef.current.value,
+    //   });
+    //   dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
+    // } catch (err) {
+    //   dispatch({ type: 'LOGIN_FAILURE' });
+    // }
+    // //try catch 를 API 콜 할떄 사용
+  };
+  console.log(user);
+
   return (
     <div className="relative h-screen flex flex-col -mt-12">
       <div className="bg-white w-full h-12"></div>
@@ -14,21 +37,31 @@ function login() {
       />
 
       <div className="flex flex-col max-w-md mx-auto my-auto z-50">
-        <form className="flex flex-col  bg-white/70 rounded-md px-10 py-10 ">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col  bg-white/70 rounded-md px-10 py-10 "
+        >
           <h1 className="mt-5 mb-3 text-center text-5xl font-poppins">Login</h1>
           <h4 className="text-sm text-center font-poppins">Welcome back</h4>
+          <label className="ml-1 mt-8 font-light font-poppins">Username</label>
           <input
             type="text"
-            id="email"
-            placeholder="Email"
-            className="w-[300px] mt-8 py-2 px-3 rounded-xl outline-none font-poppins"
+            id="username"
+            placeholder="Enter your username"
+            className="w-[300px] text-sm mt-1 py-2 px-3 rounded-xl outline-none font-poppins"
+            ref={userRef}
           />
+          <label className="ml-1 mt-5 font-light font-poppins">Password</label>
           <input
             type="password"
-            placeholder="Password"
-            className="w-[300px] mt-3 py-2 px-3 rounded-xl outline-none font-poppins"
+            placeholder="Enter your password"
+            className="w-[300px] text-sm mt-1 py-2 px-3 rounded-xl outline-none font-poppins"
+            ref={passwordRef}
           />
-          <button className="w-[300px] text-white bg-emerald-500 py-2 px-3 rounded-xl mt-6 font-poppins text-xl font-semibold">
+          <button
+            type="submit"
+            className="w-[300px] text-white bg-emerald-500 py-2 px-3 rounded-xl mt-8 font-poppins text-xl font-semibold"
+          >
             Login
           </button>
           <div className="justify-center flex items-center space-x-3 mt-5">
@@ -45,4 +78,4 @@ function login() {
   );
 }
 
-export default login;
+export default Login;

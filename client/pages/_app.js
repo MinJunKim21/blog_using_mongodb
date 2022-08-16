@@ -1,12 +1,15 @@
 import TopBar from '../components/TopBar';
+import { ContextProvider } from '../context/Context';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
-      <TopBar />
-      <Component {...pageProps} />
-    </div>
+    <ContextProvider>
+      <div>
+        <TopBar />
+        <Component {...pageProps} />
+      </div>
+    </ContextProvider>
   );
 }
 
