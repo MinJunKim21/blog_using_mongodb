@@ -11,16 +11,16 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // dispatch({ type: 'LOGIN_START' });
-    // try {
-    //   const res = await axios.post('http://localhost:5001/api/auth/login', {
-    //     username: userRef.current.value,
-    //     password: passwordRef.current.value,
-    //   });
-    //   dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
-    // } catch (err) {
-    //   dispatch({ type: 'LOGIN_FAILURE' });
-    // }
+    dispatch({ type: 'LOGIN_START' });
+    try {
+      const res = await axios.post('http://localhost:5001/api/auth/login', {
+        username: userRef.current.value,
+        password: passwordRef.current.value,
+      });
+      dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
+    } catch (err) {
+      dispatch({ type: 'LOGIN_FAILURE' });
+    }
     // //try catch 를 API 콜 할떄 사용
   };
   console.log(user);

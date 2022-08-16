@@ -4,12 +4,12 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ContextProvider>
-      <div>
+    <div>
+      <ContextProvider>
         <TopBar />
         <Component {...pageProps} />
-      </div>
-    </ContextProvider>
+      </ContextProvider>
+    </div>
   );
 }
 
