@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { Context } from '../context/Context';
 import axios from 'axios';
 
 function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { user, dispatch, isFetching } = useContext(Context);
-  // const { user } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
+  const { user } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,10 +28,10 @@ function Login() {
   function pageRedirect() {
     window.location.href = '/';
   }
+  // console.log(window);
+  if (user) return pageRedirect();
 
-  return user ? (
-    pageRedirect()
-  ) : (
+  return (
     <div className="relative h-screen flex flex-col -mt-12">
       <div className="bg-white w-full h-12"></div>
       <Image

@@ -1,15 +1,18 @@
 import axios from 'axios';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Banner from '../components/Banner';
 import Main from '../components/Main';
 import TopBar from '../components/TopBar';
 import { useRouter } from 'next/router';
+import { Context } from '../context/Context';
+import Login from './login';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const { asPath } = useRouter();
   // console.log(router.asPath);
+  const { user } = useContext(Context);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,6 +22,8 @@ export default function Home() {
     };
     fetchPosts();
   }, [asPath]);
+
+  if (!user) return <Login />;
 
   return (
     <div>
