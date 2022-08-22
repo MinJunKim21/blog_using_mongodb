@@ -7,7 +7,7 @@ import axios from 'axios';
 function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { user, dispatch, isFetching } = useContext(Context);
+  const { dispatch, isFetching } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,7 +23,6 @@ function Login() {
     }
     // //try catch 를 API 콜 할떄 사용
   };
-  console.log(user);
 
   return (
     <div className="relative h-screen flex flex-col -mt-12">
@@ -60,7 +59,8 @@ function Login() {
           />
           <button
             type="submit"
-            className="w-[300px] text-white bg-emerald-500 py-2 px-3 rounded-xl mt-8 font-poppins text-xl font-semibold"
+            className="w-[300px] text-white bg-emerald-500 py-2 px-3 rounded-xl mt-8 font-poppins text-xl font-semibold disabled:cursor-not-allowed disabled:bg-emerald-300 "
+            disabled={isFetching}
           >
             Login
           </button>

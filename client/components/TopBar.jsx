@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   FaFacebookSquare,
   FaTwitterSquare,
@@ -8,9 +8,11 @@ import {
   FaInstagramSquare,
   FaSearch,
 } from 'react-icons/fa';
+import { Context } from '../context/Context';
 
 function TopBar() {
-  const [user, setUser] = useState(true);
+  // const [user, setUser] = useState(false);
+  const { user } = useContext(Context);
 
   return (
     <div className="w-full h-12  font-poppins font-light top-0 flex items-center justify-between max-w-7xl sticky mx-auto text-xl z-50 bg-white">
