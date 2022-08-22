@@ -11,8 +11,9 @@ import {
 import { Context } from '../context/Context';
 
 function TopBar() {
-  // const [user, setUser] = useState(false);
+  // const [user, setUser] = useState(true);
   const { user } = useContext(Context);
+  console.log(user);
 
   return (
     <div className="w-full h-12  font-poppins font-light top-0 flex items-center justify-between max-w-7xl sticky mx-auto text-xl z-50 bg-white">

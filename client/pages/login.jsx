@@ -7,7 +7,8 @@ import axios from 'axios';
 function Login() {
   const userRef = useRef();
   const passwordRef = useRef();
-  const { dispatch, isFetching } = useContext(Context);
+  const { user, dispatch, isFetching } = useContext(Context);
+  // const { user } = useContext(Context);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,7 +25,13 @@ function Login() {
     // //try catch 를 API 콜 할떄 사용
   };
 
-  return (
+  function pageRedirect() {
+    window.location.href = '/';
+  }
+
+  return user ? (
+    pageRedirect()
+  ) : (
     <div className="relative h-screen flex flex-col -mt-12">
       <div className="bg-white w-full h-12"></div>
       <Image
