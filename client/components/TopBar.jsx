@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   FaFacebookSquare,
   FaTwitterSquare,
@@ -11,8 +11,17 @@ import {
 import { Context } from '../context/Context';
 
 function TopBar() {
-  // const [user, setUser] = useState(true);
+  const [loggedin, setLoggedin] = useState(false);
   const { user } = useContext(Context);
+
+  if (user) {
+    !loggedin;
+  } else {
+    loggedin;
+  }
+
+  useEffect(() => {}, [{ user }]);
+
   console.log(user);
 
   return (
@@ -25,19 +34,19 @@ function TopBar() {
       </div>
       <div>
         <ul className="flex gap-5 font-light justify-center cursor-pointer ">
-          <Link href={user ? '/' : '/register'}>
+          <Link href={loggedin ? '/' : '/register'}>
             <li>HOME</li>
           </Link>
           <li>ABOUT</li>
           <li>CONTACT</li>
-          <Link href={user ? '/write' : '/register'}>
+          <Link href={loggedin ? '/write' : '/register'}>
             <li>WRITE</li>
           </Link>
         </ul>
       </div>
       <div className="flex items-center">
-        {user ? (
-          <Link href={user ? '/account' : '/login'}>
+        {loggedin ? (
+          <Link href={loggedin ? '/account' : '/login'}>
             <Image
               src="https://images.unsplash.com/photo-1638588008500-3eb233f987f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               width={35}

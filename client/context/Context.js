@@ -7,7 +7,6 @@ const INITIAL_STATE = {
   fetching: false,
   error: false,
 };
-
 export const Context = createContext(INITIAL_STATE);
 
 export const ContextProvider = ({ children }) => {
