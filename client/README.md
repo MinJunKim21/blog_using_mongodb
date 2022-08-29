@@ -19,3 +19,4 @@ BE
   -Unhandled Runtime Error
   Error: Hydration failed because the initial UI does not match what was rendered on the server.
   See more info here: https://nextjs.org/docs/messages/react-hydration-error
+- Next.js는 client-side를 렌더하기 전 server-side 렌더를 수행한다. Next.js에서 제공하는 Server Side Rendering(SSR)에서는 window, document 같은 브라우저 전역 객체를 사용할 수 없다. window 객체는 client-side에만 존재한다. 따라서, 페이지가 client에 로드되고 window 객체가 정의될 때까지 localStorage에 접근할 수 없다. 그래서 그 후에 진행시키도록 useEffect 또는 typeof window !== 'undefined' 와 같은 방법을 사용하여 SSR에서 렌더되지 않고 CSR 단계로 미루도록 하였다.

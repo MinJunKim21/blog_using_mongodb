@@ -23,21 +23,15 @@ export default function Home() {
     fetchPosts();
   }, [asPath]);
 
+  function pageRedirect() {
+    window.location.href = '/login';
+  }
+
   if (typeof window !== 'undefined') {
     if (!user) {
       pageRedirect();
     }
   }
-
-  function pageRedirect() {
-    window.location.href = '/login';
-  }
-  // console.log(window);
-
-  // useEffect(() => {
-  //   pageRedirect();
-  // }, [!user]);
-
   //user의 정보는 Csr에서 얻어지므로 ssr이 먼저 실행되는 상황에서는 오류로 처리됨. useEffect 등 csr로 진행되도록해야함. 앞에 if typeof window 이 조건을 통해서 csr로 진행하게 하여 hydration 해결.
 
   return (

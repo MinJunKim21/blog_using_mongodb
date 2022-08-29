@@ -1,9 +1,24 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { IoIosCamera } from 'react-icons/io';
 import Sidebar from '../components/Sidebar';
+import { Context } from '../context/Context';
 
 function account() {
+  const { user, dispatch } = useContext(Context);
+  const handleLogout = () => {
+    dispatch({ type: 'LOGOUT' });
+  };
+
+  function pageRedirect() {
+    window.location.href = '/login';
+  }
+
+  if (typeof window !== 'undefined') {
+    if (!user) {
+      pageRedirect();
+    }
+  }
   return (
     <div className="flex max-w-4xl mt-10 space-x-8 mx-auto">
       <div className="w-2/3 mx-auto flex flex-col">
@@ -37,7 +52,7 @@ function account() {
           <h2 className="text-xl font-medium font-poppins">Username</h2>
           <input
             type="text"
-            placeholder="Minjun Kim"
+            placeholder="Minjun"
             className=" border-b-2 font-light outline-none focus:ring-1   ring-gray-300 w-full mb-7 mt-1 px-2 font-poppins rounded-md"
           />
           <h2 className="text-xl font-medium font-poppins">Email</h2>
@@ -58,7 +73,10 @@ function account() {
           <button className="text-lg font-poppins font-medium text-white rounded-lg py-2 px-3 bg-emerald-400">
             Update
           </button>
-          <button className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400">
+          <button
+            className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400"
+            onClick={handleLogout}
+          >
             Log Out
           </button>
         </div>
