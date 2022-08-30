@@ -1,17 +1,49 @@
 import Image from 'next/image';
 import { RiImageAddLine } from 'react-icons/ri';
+import { useContext, useState } from 'react';
+import axios from 'axios';
+import { Context } from '../context/Context';
 
 function write() {
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
+  const [file, setFile] = useState(null);
+  const { user } = useContext(Context);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newPost = {
+      username: user.username,
+      title,
+      desc,
+    };
+    if (file) {
+      const data = FormData();
+      const filename = Date.now() + file.name;
+      data.append('name', filename);
+      data.append('file', file);
+      newPost.photo = filename;
+      try {
+        await axios.post('/upload', data);
+      } catch (err) {}
+    }
+    try {
+      const res = await axios.post('/posts', newPost);
+      window.location.replac('/post/' + res.data._id);
+    } catch (err) {}
+  };
   return (
     <div className="max-w-4xl mx-auto">
       <div className="relative h-[400px] my-10">
-        <Image
-          src="https://images.unsplash.com/photo-1546146830-2cca9512c68e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-3xl"
-          alt=""
-        />
+        {file && (
+          <Image
+            src={URL.createObjectURL(file)}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-3xl"
+            alt=""
+          />
+        )}
       </div>
       <form>
         <div>
@@ -34,7 +66,10 @@ function write() {
           ></textarea>
         </div>
 
-        <div className="flex justify-between my-5 items-center">
+        <div
+          className="flex justify-between my-5 items-center"
+          onSubmit={handleSubmit}
+        >
           <div className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400">
             <label
               htmlFor="fileInput"
@@ -43,9 +78,17 @@ function write() {
               <RiImageAddLine />
               <span className="font-poppins">Add File</span>
             </label>
-            <input type="file" id="fileInput" className="hidden" />
+            <input
+              type="file"
+              id="fileInput"
+              className="hidden"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
           </div>
-          <button className="text-lg font-poppins font-medium text-white rounded-lg py-2 px-3 bg-emerald-400">
+          <button
+            className="text-lg font-poppins font-medium text-white rounded-lg py-2 px-3 bg-emerald-400"
+            type="submit"
+          >
             Publish
           </button>
         </div>
