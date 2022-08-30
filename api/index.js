@@ -48,7 +48,7 @@ app.use('/api/categories', categoryRoute);
 //이렇게 작성하면, localhost:5001/minjun 들어가면 this is minjun web 이라는 콘솔 작동함
 
 app.listen('5001', () => {
-  console.log('backenddasdfsadaaadddd');
+  console.log('backend is running');
 });
 
 // npm init 으로 package.json 을 만들고,
