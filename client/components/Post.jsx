@@ -2,19 +2,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 function Post({ post }) {
-  // console.log({ post });
+  const PF = 'http://localhost:5001/images/';
   return (
     <div className="mb-10 w-[385px] mx-3 mt-5">
       <div className="relative h-[280px]">
-        {post.photo && (
+        {/* {post.photo && (
           <Image
-            src={post.photo}
+            src={PF + post.photo}
             layout="fill"
             objectFit="cover"
             alt=""
             className="rounded-xl"
           />
-        )}
+        )} */}
       </div>
       <div className="flex flex-col text-center">
         <div className="font-varelaRound text-sm text-[#be9656] mt-4 space-x-4 leading-5">

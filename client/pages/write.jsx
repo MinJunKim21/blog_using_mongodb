@@ -18,7 +18,7 @@ function write() {
       desc,
     };
     if (file) {
-      const data = FormData();
+      const data = new FormData();
       const filename = Date.now() + file.name;
       data.append('name', filename);
       data.append('file', file);
@@ -28,9 +28,11 @@ function write() {
       } catch (err) {}
     }
     try {
-      const res = await axios.post('/posts', newPost);
-      window.location.replac('/post/' + res.data._id);
-    } catch (err) {}
+      const res = await axios.post('http://localhost:5001/api/posts/', newPost);
+      window.location.replace('/post/' + res.data._id);
+    } catch (err) {
+      console.log(errrrrr);
+    }
   };
   return (
     <div className="max-w-4xl mx-auto">
@@ -45,7 +47,7 @@ function write() {
           />
         )}
       </div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <h1 className="text-xl font-medium font-poppins">Title</h1>
           <input
@@ -53,6 +55,7 @@ function write() {
             placeholder="Write your title here"
             autoFocus={true}
             className="border rounded-md shadow-sm outline-none ring-gray-300 focus:ring-1 w-full py-3 px-2 mt-2 font-light font-poppins"
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
 
@@ -63,13 +66,11 @@ function write() {
             type="text"
             cols="10"
             className="border font-light outline-none focus:ring-1 rounded-md shadow-sm ring-gray-300 w-full mt-2 py-3 px-2 h-[200px] font-poppins"
+            onChange={(e) => setDesc(e.target.value)}
           ></textarea>
         </div>
 
-        <div
-          className="flex justify-between my-5 items-center"
-          onSubmit={handleSubmit}
-        >
+        <div className="flex justify-between my-5 items-center">
           <div className="text-lg border-2 rounded-lg py-2 px-3 border-emerald-400">
             <label
               htmlFor="fileInput"

@@ -10,6 +10,7 @@ function SinglePost() {
   const router = useRouter();
   const path = router.asPath.split('/')[2];
   const [post, setPost] = useState({});
+  const PF = 'http://localhost:5001/images/';
 
   useEffect(() => {
     const getPost = async () => {
@@ -18,19 +19,20 @@ function SinglePost() {
     };
     getPost();
   }, [path]);
+  console.log(post.photo);
 
   return (
     <div className="flex flex-col m-5 ">
       <div className="relative h-[300px]">
-        {post.photo && (
+        {/* {post.photo && (
           <Image
-            src={post.photo}
+            src={PF + post.photo}
             alt=""
             className="rounded-xl"
             layout="fill"
             objectFit="cover"
           />
-        )}
+        )} */}
       </div>
       <div className="flex justify-between mt-5 items-center ">
         <h1 className="w-[100%] text-center text-3xl font-lora font-nanummyeongjo font-extrabold">
