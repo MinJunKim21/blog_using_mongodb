@@ -19,20 +19,20 @@ function SinglePost() {
     };
     getPost();
   }, [path]);
-  console.log(post.photo);
 
   return (
     <div className="flex flex-col m-5 ">
       <div className="relative h-[300px]">
-        {/* {post.photo && (
-          <Image
-            src={PF + post.photo}
-            alt=""
-            className="rounded-xl"
-            layout="fill"
-            objectFit="cover"
-          />
-        )} */}
+        {post.photo && (
+          // <Image
+          //   src={PF + post.photo}
+          //   alt=""
+          //   className="rounded-xl"
+          //   layout="fill"
+          //   objectFit="cover"
+          // />
+          <img src={PF + post.photo} alt="" />
+        )}
       </div>
       <div className="flex justify-between mt-5 items-center ">
         <h1 className="w-[100%] text-center text-3xl font-lora font-nanummyeongjo font-extrabold">

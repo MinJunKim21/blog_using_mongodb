@@ -6,15 +6,16 @@ function Post({ post }) {
   return (
     <div className="mb-10 w-[385px] mx-3 mt-5">
       <div className="relative h-[280px]">
-        {/* {post.photo && (
-          <Image
-            src={PF + post.photo}
-            layout="fill"
-            objectFit="cover"
-            alt=""
-            className="rounded-xl"
-          />
-        )} */}
+        {post.photo && (
+          // <Image
+          //   src={PF + post.photo}
+          //   layout="fill"
+          //   objectFit="cover"
+          //   alt=""
+          //   className="rounded-xl"
+          // />
+          <img src={PF + post.photo} alt="" />
+        )}
       </div>
       <div className="flex flex-col text-center">
         <div className="font-varelaRound text-sm text-[#be9656] mt-4 space-x-4 leading-5">
